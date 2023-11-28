@@ -31,7 +31,7 @@ docker run \
 	--network="$mynetwork" \
 	--name="$container_name" \
 	-v $www_dir:/home/${DOCKER_USER}/www/html \
-	-v mysql_data:/var/lib/mysql \
+	-v maridb_data:/var/lib/mysql \
 	-e USER=$DOCKER_USER \
 	-e PASSWORD=$DOCKER_USER \
 	-d \

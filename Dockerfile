@@ -1,7 +1,7 @@
-FROM mariadb:10.9
-MAINTAINER Oriol Boix Anfosso orboan@entorn.io
+FROM mariadb:10
+MAINTAINER Oriol Boix Anfosso orboan@pluralcamp.com
 
-LABEL version="1.0"
+LABEL version="1.1"
 LABEL description="Asix - Projecte 1"
 
 ARG language=ca_ES
@@ -93,8 +93,10 @@ RUN \
   
 RUN \
     apt update -y && \
-    apt -y install supervisor openssh-server apache2 mariadb-server && \
-    clean-layer.sh
+    apt -y install supervisor openssh-server apache2 && \ 
+    clean-layer.sh	
+    #mariadb-server && \
+    
 
 # - Generate keys for ssh. 
 # (This is usually done by systemd when sshd service is started)
